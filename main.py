@@ -1,5 +1,17 @@
-def hello():
-    print("Hello There")
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+df = pd.read_csv('lamborghini_sales_2020_2025.csv')
+colors_array = ["#0c0116","#5c6bff"]
+labels_array = ['Gasoline','Hybrid']
+
+HP = df['Horsepower']
+
+FT = df.groupby(df['Fuel Type']).size()
+print(FT)
 
 
-hello()
+plt.pie(FT,colors=colors_array,labels=labels_array)
+plt.title("Fuel Type of Lamborghini cars sold from 2020-2025")
+plt.show()
