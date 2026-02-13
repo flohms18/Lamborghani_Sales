@@ -11,7 +11,8 @@ HP = df['Horsepower']
 FT = df.groupby(df['Fuel Type']).size()
 print(FT)
 
-
-plt.pie(FT,colors=colors_array,labels=labels_array)
+fig, ax = plt.subplots()
+fig.set_facecolor('#F8F9FA')
+ax.pie(FT,colors=colors_array,labels=labels_array)
 plt.title("Fuel Type of Lamborghini cars sold from 2020-2025")
 plt.show()
